@@ -1,0 +1,201 @@
+
+:root {
+    --primary-bg: #1e1e1e;
+    --secondary-bg: #2d2d2d;
+    --tertiary-bg: #3c3c3c;
+    --primary-text: #d4d4d4;
+    --accent-color: #0e639c;
+    --accent-hover: #1177bb;
+    --border-color: #4a4a4a;
+    --success-color: #4CAF50;
+    --error-color: #F44336;
+}
+
+html {
+    /* Set a responsive root font size */
+    font-size: calc(8px + 0.8vw);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    margin: 0;
+    padding: 1.25rem; /* 20px */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    /* max-width is still useful as a fallback for very large screens */
+    max-width: 600px; 
+    background-color: var(--secondary-bg);
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.4); /* 4px 12px */
+    overflow: hidden;
+}
+
+header {
+    background-color: var(--tertiary-bg);
+    padding: 0.9375rem 1.5625rem; /* 15px 25px */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.spinner {
+    font-size: 1.8rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+main {
+    padding: 1.5625rem; /* 25px */
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* 20px */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem; /* 8px */
+    font-weight: 500;
+}
+
+.path-input {
+    display: flex;
+}
+
+input[type="text"], input[type="number"], select {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem; /* 4px */
+    padding: 0.625rem; /* 10px */
+    font-size: 1rem;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.path-input button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    border-radius: 0.25rem; /* 4px */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+}
+
+.interval-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.625rem; /* 10px */
+}
+
+.interval-group input[type="number"] {
+    width: 5rem; /* 80px */
+}
+
+.timer-display {
+    background-color: var(--primary-bg);
+    text-align: center;
+    padding: 1.25rem; /* 20px */
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.125rem; /* 2px */
+    border-radius: 0.25rem; /* 4px */
+    border: 1px solid var(--border-color);
+    transition: border-color 0.3s;
+}
+
+@keyframes flash-success {
+    0%, 100% { border-color: var(--border-color); }
+    50% { border-color: var(--success-color); }
+}
+
+@keyframes flash-error {
+    0%, 100% { border-color: var(--border-color); }
+    50% { border-color: var(--error-color); }
+}
+
+.flash-success {
+    animation: flash-success 1.5s ease-in-out;
+}
+
+.flash-error {
+    animation: flash-error 1.5s ease-in-out;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9375rem; /* 15px */
+}
+
+.controls button {
+    padding: 0.75rem; /* 12px */
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.btn-apply {
+    background-color: var(--accent-color);
+}
+
+.btn-apply:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-pause {
+    background-color: #c0392b;
+}
+.btn-pause:hover {
+    background-color: #e74c3c;
+}
+
+.btn-resume {
+    background-color: #27ae60;
+}
+.btn-resume:hover {
+    background-color: #2ecc71;
+}
+
+input:read-only {
+    cursor: default;
+    background-color: #2a2d2e;
+}
