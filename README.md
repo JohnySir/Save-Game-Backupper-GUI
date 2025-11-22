@@ -1,9 +1,10 @@
 
 # 🎮 Save Game Backupper
 
+A sleek, modern, and easy-to-use desktop application for automatically backing up your game saves. Never lose your progress again!
+
 ![SS](https://raw.githubusercontent.com/JohnySir/Save-Game-Backupper-GUI/refs/heads/main/assets/Screenshot%202025-11-23%20035006.png "SS")
 
-A sleek, modern, and easy-to-use desktop application for automatically backing up your game saves. Never lose your progress again!
 
 ***
 
